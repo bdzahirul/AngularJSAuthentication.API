@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+<body>
+    <!--Section1-->
+
+    <div ng-app="" ng-init="name='Mohammed Zahirul Haque'; firstName='Zahir'; person={firstName:'Mohammed Zahirul',lastName:'Haque'};
+             names=['Zahir', 'Maryam', 'Labuni','Chaity']">
+
+        <p>Enter your name: <input type="text" ng-model="name" /></p>
+        <p>Your name is <span style="font-weight:bold" ng-bind="name"></span></p>
+        <p>Your name is <span style="font-weight:bold">{{name}}</span></p>
+        <p>Your upper case name is <span style="font-weight:bold">{{name | uppercase}}</span></p>
+        <p>Your lower case name is <span style="font-weight:bold">{{name | lowercase}}</span></p>
+
+        <p>Currency format <span style="font-weight:bold">{{ 100 | currency}}</span></p>
+        <hr />
+        <p>The name is <span style="font-weight:bold" data-ng-bind="firstName"></span></p>
+        <p>The name is <span style="font-weight:bold" data-ng-bind="person.firstName"></span></p>
+        <hr />
+        <p>My first expression: {{ 5 + 5 }}</p>
+
+
+        <p>Please enter First Number <input type="number" ng-model="firstNumber" /> &nbsp; Please enter Second Number <input type="number" ng-model="secondNumber" /></p>
+        <p>The sumetion of two number is <span style="font-weight:bold"> {{firstNumber+secondNumber}}</span></p>
+        <hr />
+        <p>Filter name <input type="text" ng-model="nameFilter" /></p>
+        <ul>
+            <li ng-repeat="item in names | filter:nameFilter | orderBy : item ">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+
+
+        <!--Section2-->
+        <!--<div ng-app="myApplication" ng-controller="myController">
+            Enter first name <input type="text" ng-model="firstName" /><br />
+            Enter first name <input type="text" ng-model="lastName" /><br />
+
+            You full name is {{firstName + " " + lastName}}<br />
+
+
+        </div>
+
+        <script>
+        var app = angular.module('myApplication', []);
+        app.controller('myController', function ($scope) {
+            $scope.firstName = 'Mohammed Zahirul';
+            $scope.lastName = 'Haque';
+        });
+        </script>-->
+
+
+
+</body>
+</html>
